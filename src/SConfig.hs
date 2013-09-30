@@ -8,22 +8,26 @@ data SConfig = SConfig {
             }
 
 data SCable = SCable {
-            test1 :: Type,
-            test2 :: Type
+            youngsModulus :: YModulus,
+            tensileStrength :: Tensile,
+            frictionCoeff :: FrictionCoeff,
+            cableDensity :: Density,
             }
 
 data SPlanet = SPlanet {
-            atmosphere :: Length -> Density,
-            radius :: Length
-            mass :: Mass
+            planetAtmos :: Length -> Density,
+            planetRadius :: Length,
+            planetMass :: Mass,
+            planetRot :: Time,
             }
 
 data SRun = SRun {
-            test1 :: Type,
-            test2 :: Type
+            timestep :: Time,
+            timelength :: Time,
+            safetyFactor :: Double
             }
 
 data SElevator = SElevator {
-            test1 :: Type,
-            test2 :: Type
+            elevatorMass :: Mass,
+            elevatorSpeed :: Speed
             }
