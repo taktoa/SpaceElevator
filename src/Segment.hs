@@ -31,10 +31,3 @@ initSegments n =
     ks = cCr * cEc * n / cCl
     ls = map (\k -> aL - (cMp / k)) ks
     fr = replicate n cFr
-    
-
-        mt += points[i].m = points[i].initlen * points[i].crosssect * c_Dcnt;
-
-        fcoef = c_Ge / (points[i].pos.x * points[i].pos.x) - points[i].pos.x * c_Vang * c_Vang;
-        tension += fcoef * points[i].m;
-    }
