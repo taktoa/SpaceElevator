@@ -35,7 +35,7 @@ GLdouble maxforce, curforce;
 void initConstants() {                              // --- Set constants
     c_Re = 6.36e6;                                  // Earth radius (m)
     c_Ge = 3.986e14;                                // Earth gravity (Me * G) (m^3 / s^2)
-    c_Slim = 30e9;                                  // Cable max tensile strength (Pa)
+    c_Slim = 130e9;                                 // Cable max tensile strength (Pa)
     c_Vang = 7.3e-5;                                // Earth rotation (radians/s)
     c_Ecnt = 1e12;                                  // Young's modulus of cable (Pa)
     c_Dcnt = 1300;                                  // Density of cable (kg/m^3)
@@ -43,7 +43,7 @@ void initConstants() {                              // --- Set constants
     c_Fs = 2;                                       // Factor of safety (DL)
     c_Mpay = 1.2e3;                                 // Payload mass (kg)
     c_Fr_cnt = 10;                                  // Friction coefficient of cable (DL)
-    c_Vele = 50;                                    // Elevator target speed (m/s)
+    c_Vele = 55;                                    // Elevator target speed (m/s)
     c_Rgeo = pow(c_Ge / c_Vang / c_Vang, 1./3.);    // Geosynchronous orbit height (m)
 }
 
