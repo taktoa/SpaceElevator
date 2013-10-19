@@ -6,7 +6,7 @@
 
 #define NUMPOINTS 100
 #define TIMESTEP ((double) 0.5)
-#define BREAKPOINT 90
+#define BREAKPOINT 50
 
 #define WIDTH 600
 #define HEIGHT 600
@@ -72,6 +72,32 @@ void init()                                         // --- Initialization routin
     }
 
     points[numpoints - 1].m = -tension / fcoef * 1; // FIXME
+
+    if(0) {
+        for(int i = 0; i < numpoints; i++) {
+           printf("Item number: %d\n", i + 1);
+           printf("Position: %f, %f, %f\n", points[i].pos.x, points[i].pos.y, points[i].pos.z);
+           printf("Velocity: %f, %f, %f\n", points[i].v.x, points[i].v.y, points[i].v.z);
+           printf("Force: %f, %f, %f\n", points[i].f.x, points[i].f.y, points[i].f.z);
+           printf("Mass: %f\n", points[i].m);
+           printf("Spring Constant: %f\n", points[i].k);
+           printf("Friction Coefficient: %f\n", points[i].frict);
+           printf("Initial Length: %f\n", points[i].initlen);
+           printf("Cross Sectional Area: %f\n", points[i].crosssect);
+        }
+    } else if(1) {
+        for(int i = 0; i < numpoints; i++) {
+           //printf("[%d, ", i + 1);
+           printf("[(%e, %e, %e), ", points[i].pos.x, points[i].pos.y, points[i].pos.z);
+           printf("(%e, %e, %e), ", points[i].v.x, points[i].v.y, points[i].v.z);
+           printf("(%e, %e, %e), ", points[i].f.x, points[i].f.y, points[i].f.z);
+           printf("%e, ", points[i].m);
+           printf("%e, ", points[i].k);
+           printf("%e, ", points[i].frict);
+           printf("%e, ", points[i].initlen);
+           printf("%e]\n", points[i].crosssect);
+        }
+    }
 }
 
 inline void pointdynamics(point_t *curpt)           // Calculate point movement
